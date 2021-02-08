@@ -1,0 +1,19 @@
+{
+  "eventList": {
+    "heading": "Event List",
+    "description": "This event handler UI is full featured, advanced UI for handling events and actions. In this screen you can view all of the events and event details. <br> Create/Update event screen provides advanced UI to create/update events with advanced settings.",
+    "button": {
+      "create": "Create",
+      "delete": "Delete"
+    },
+    "table": {
+      "column": {
+        "eventName": "Event name",
+        "status": "Status",
+        "target": "Target",
+        "rule": "Rule",
+        "actions": "Action(s)"
+      }
+    }
+  }
+}

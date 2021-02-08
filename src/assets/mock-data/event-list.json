@@ -1,0 +1,895 @@
+[
+  {
+    "handlerId": "06104e37-4d00-44e3-ad7c-f7a9e7433c01",
+    "targetOperatorId": "OP0088639970",
+    "name": "test new api1",
+    "ruleConfig": {
+      "type": "SubscriberDailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_MONTH",
+        "inactiveTimeoutOffsetMinutes": "30",
+        "limitTotalTrafficMegaByte": "122"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ActivationAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "executionOffsetMinutes": "20"
+        }
+      },
+      {
+        "type": "SendMailAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "to": "asd@asd0asd",
+          "title": "aaasd",
+          "message": "asd"
+        }
+      },
+      {
+        "type": "DeactivationAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "executionOffsetMinutes": "22"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "11f02cfc-f51a-449e-b718-5ea8058d76ea",
+    "targetImsi": "440103217006834",
+    "name": "440103217006834",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_MONTH",
+        "limitTotalTrafficMegaByte": "1"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "DeactivationAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      }
+    ]
+  },
+  {
+    "handlerId": "1a426750-795c-450c-8622-22fb074039cc",
+    "targetOperatorId": "OP0088639970",
+    "name": "for operator",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "333"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "SendMailAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "to": "ddd@dfdd.cc",
+          "title": "sdfs",
+          "message": "sfdsfd"
+        }
+      },
+      {
+        "type": "ActivationAction",
+        "properties": { "executionDateTimeConst": "BEGINNING_OF_NEXT_DAY" }
+      }
+    ]
+  },
+  {
+    "handlerId": "46724ddd-7513-4773-9c46-b2ef913a7cef",
+    "targetGroupId": "dda258c8-f429-4934-b418-126e730cd56b",
+    "name": "teste2e2",
+    "ruleConfig": {
+      "type": "SubscriberDailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_MONTH",
+        "inactiveTimeoutOffsetMinutes": "10",
+        "limitTotalTrafficMegaByte": "200"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ActivationAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "executionOffsetMinutes": "10"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "54253f18-7610-4529-bdff-cf9cae8ffe86",
+    "targetOperatorId": "OP0088639970",
+    "name": "Prefixed event handler",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_DAY",
+        "limitTotalTrafficMegaByte": "99999"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "SendMailToOperatorAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "title": "Traffic notification",
+          "message": "Target SIM: ${imsi} \n\nDaily total traffic of the SIM exceeds 99999 MiB."
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "55fb96ad-6589-4801-aa8a-8531a8ce076d",
+    "targetGroupId": "test",
+    "name": "test-event2 speedclass",
+    "description": "action:  change speed class",
+    "ruleConfig": {
+      "type": "SubscriberStatusAttributeRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_DAY",
+        "targetStatus": "active"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ChangeSpeedClassAction",
+        "properties": {
+          "speedClass": "s1.standard",
+          "executionDateTimeConst": "AFTER_ONE_DAY"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "5ae10a3d-c923-47d9-91a1-205cae3ef3d9",
+    "targetGroupId": "dda258c8-f429-4934-b418-126e730cd56b",
+    "name": "test",
+    "description": "test",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "333"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ExecuteWebRequestAction",
+        "properties": {
+          "headers": "{\"test\":\"tset\"}",
+          "executionDateTimeConst": "IMMEDIATELY",
+          "httpMethod": "GET",
+          "contentType": "application/json",
+          "url": "http://sdf.ds"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "5f536f8b-4da7-4d2a-b43e-69f41017e0ed",
+    "targetGroupId": "dda258c8-f429-4934-b418-126e730cd56b",
+    "name": "test-nihongo",
+    "description": "nihongo",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "222"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ExecuteWebRequestAction",
+        "properties": {
+          "headers": "{}",
+          "executionDateTimeConst": "IMMEDIATELY",
+          "httpMethod": "GET",
+          "contentType": "application/json",
+          "url": "http://sdf.sdf"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "5f9d66cc-ea54-4fa1-af4c-ce697ac2c142",
+    "targetGroupId": "dda258c8-f429-4934-b418-126e730cd56b",
+    "name": "group-redirect",
+    "description": "from group",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "11"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ActivationAction",
+        "properties": { "executionDateTimeConst": "BEGINNING_OF_NEXT_MONTH" }
+      },
+      {
+        "type": "ChangeSpeedClassAction",
+        "properties": {
+          "speedClass": "s1.minimum",
+          "executionDateTimeConst": "IMMEDIATELY"
+        }
+      },
+      {
+        "type": "SendMailToOperatorAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "title": "something biiiiiigggggg reaaaaalllyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+          "message": "sdfsdfyyy55"
+        }
+      },
+      {
+        "type": "DeactivationAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      }
+    ]
+  },
+  {
+    "handlerId": "6704dcbd-550a-401b-9afa-ae6de4c9e585",
+    "targetGroupId": "test",
+    "name": "event2",
+    "description": "sdfsdf",
+    "ruleConfig": {
+      "type": "MonthlyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "2222"
+      }
+    },
+    "status": "inactive",
+    "actionConfigList": [
+      {
+        "type": "DeactivationAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      },
+      {
+        "type": "SendMailAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "to": "ddd@dd.dom",
+          "title": "sdfs",
+          "message": "sdf"
+        }
+      },
+      {
+        "type": "ActivationAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      }
+    ]
+  },
+  {
+    "handlerId": "72c31a02-f959-4bf3-b9d7-bb22fca38588",
+    "targetImsi": "440103217006834",
+    "name": "webhook (440103217006834)",
+    "ruleConfig": {
+      "type": "SubscriberSpeedClassAttributeRule",
+      "properties": { "inactiveTimeoutDateConst": "IMMEDIATELY" }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ExecuteWebRequestAction",
+        "properties": {
+          "headers": "{}",
+          "executionDateTimeConst": "IMMEDIATELY",
+          "httpMethod": "POST",
+          "body": "{\"aaa\":\"bbb\"}",
+          "contentType": "application/json",
+          "url": "https://postb.in/1591587274956-7676858950871"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "746f233f-b762-47f3-8b61-3e3bf3143008",
+    "targetGroupId": "dda258c8-f429-4934-b418-126e730cd56b",
+    "name": "test3",
+    "ruleConfig": {
+      "type": "SubscriberSpeedClassAttributeRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "AFTER_ONE_DAY",
+        "targetSpeedClass": "s1.slow",
+        "inactiveTimeoutOffsetMinutes": "30"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ChangeSpeedClassAction",
+        "properties": {
+          "speedClass": "s1.standard",
+          "executionDateTimeConst": "IMMEDIATELY"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "7597beb5-3c0c-4f92-92eb-1ef148d2cfaa",
+    "targetGroupId": "dda258c8-f429-4934-b418-126e730cd56b",
+    "name": "test iam",
+    "description": "cred",
+    "ruleConfig": {
+      "type": "SubscriberFirstTrafficRule",
+      "properties": { "inactiveTimeoutDateConst": "NEVER" }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ChangeSpeedClassAction",
+        "properties": {
+          "speedClass": "s1.slow",
+          "executionDateTimeConst": "IMMEDIATELY"
+        }
+      },
+      {
+        "type": "InvokeAWSLambdaAction",
+        "properties": {
+          "endpoint": "http://test.iam",
+          "functionName": "iam",
+          "executionDateTimeConst": "IMMEDIATELY",
+          "credentialsId": "test123",
+          "parameter1": "test"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "7ebcb8c1-fc3c-4ea8-ae07-743706dd16c7",
+    "targetImsi": "440103217006834",
+    "name": "testing-import",
+    "ruleConfig": {
+      "type": "SubscriberDailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_MONTH",
+        "limitTotalTrafficMegaByte": "123"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "SendMailAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "to": "abc@abc.com",
+          "title": "asda",
+          "message": "Asdas"
+        }
+      },
+      {
+        "type": "ChangeSpeedClassAction",
+        "properties": {
+          "speedClass": "s1.fast",
+          "executionDateTimeConst": "IMMEDIATELY"
+        }
+      },
+      {
+        "type": "ActivationAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      },
+      {
+        "type": "ExecuteWebRequestAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "httpMethod": "GET",
+          "contentType": "application/json",
+          "url": "SDfsd"
+        }
+      },
+      {
+        "type": "InvokeAWSLambdaAction",
+        "properties": {
+          "endpoint": "sdf",
+          "functionName": "sdf",
+          "executionDateTimeConst": "IMMEDIATELY",
+          "credentialsId": "test123"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "848a72f3-665f-4a24-9d8e-ab46d2311c59",
+    "targetGroupId": "test999",
+    "name": "test-event2 deactivaton",
+    "description": "deactivation action",
+    "ruleConfig": {
+      "type": "SubscriberExpiredRule",
+      "properties": { "inactiveTimeoutDateConst": "NEVER" }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "DeactivationAction",
+        "properties": { "executionDateTimeConst": "NEVER" }
+      }
+    ]
+  },
+  {
+    "handlerId": "93090dd7-5373-48e6-b8e0-53a228edaef1",
+    "targetGroupId": "test",
+    "name": "testrrr",
+    "description": "rrr",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "222"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ActivationAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      }
+    ]
+  },
+  {
+    "handlerId": "a5ea2d4f-809c-463b-942e-335840c0b0fc",
+    "targetGroupId": "test",
+    "name": "test-event invokeaws",
+    "description": "invoke aws lambda",
+    "ruleConfig": {
+      "type": "SubscriberStatusAttributeRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "targetStatus": "inactive"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "InvokeAWSLambdaAction",
+        "properties": {
+          "secretAccessKey": "fwef32f23",
+          "endpoint": "https://sdfs.dsfdf3333",
+          "functionName": "somefunc",
+          "accessKey": "sdfsf23fwefw",
+          "executionDateTimeConst": "NEVER",
+          "parameter3": "srwerwebb",
+          "parameter2": "someval",
+          "parameter1": "smoe val"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "a6c8a255-e985-4296-a8f7-fce30d0b9dd5",
+    "targetGroupId": "test",
+    "name": "sess",
+    "description": "ggggggg000",
+    "ruleConfig": {
+      "type": "SessionStatusRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "targetSessionStatus": "Created"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ActivationAction",
+        "properties": { "executionDateTimeConst": "NEVER" }
+      }
+    ]
+  },
+  {
+    "handlerId": "b6ed7480-2973-4abe-ac1d-64a881d5bfff",
+    "targetGroupId": "test",
+    "name": "letmetest",
+    "description": "stertset",
+    "ruleConfig": {
+      "type": "SubscriberStatusAttributeRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_DAY",
+        "targetStatus": "ready"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ExecuteWebRequestAction",
+        "properties": {
+          "headers": "{\"header1\":\"vale\",\"header2\":\"shfishjfsfnsf\"}",
+          "executionDateTimeConst": "BEGINNING_OF_NEXT_MONTH",
+          "httpMethod": "POST",
+          "body": "hahaha",
+          "contentType": "json",
+          "url": "http://some.url"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "b9e1d452-8034-4479-843e-83469ae9529b",
+    "targetGroupId": "test",
+    "name": "test-event1",
+    "description": "test eetnt dedfnsef",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "111"
+      }
+    },
+    "status": "inactive",
+    "actionConfigList": [
+      {
+        "type": "SendMailAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "to": "test@outlook.com",
+          "title": "Test title",
+          "message": "Im testing yes"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "bc0878b4-02ef-42f9-a8db-565e1209109c",
+    "targetGroupId": "test",
+    "name": "tetsimsi",
+    "description": "imsi",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "33"
+      }
+    },
+    "status": "inactive",
+    "actionConfigList": [
+      {
+        "type": "DeactivationAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      }
+    ]
+  },
+  {
+    "handlerId": "c0921759-4af8-4546-927c-f760e6e44c47",
+    "targetGroupId": "test",
+    "name": "letmnes",
+    "description": "sfgsjfjs",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "333"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "SendMailAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "to": "fsdf@dd.com",
+          "title": "sdfjsfdl",
+          "message": "jdslkfjsl"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "c3aee40c-ef31-466f-b24a-82ad7a23d2d4",
+    "targetGroupId": "test",
+    "name": "testst",
+    "description": "testet",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "66"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "DeactivationAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      }
+    ]
+  },
+  {
+    "handlerId": "cbf23de9-298a-41da-8134-263e3ba3d02e",
+    "targetOperatorId": "OP0088639970",
+    "name": "Prefixed event handler",
+    "ruleConfig": {
+      "type": "MonthlyTotalTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_MONTH",
+        "runOnceAmongTarget": "true",
+        "limitTotalTrafficMegaByte": "1234"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "SendMailToOperatorAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "title": "Traffic notification",
+          "message": "Monthly total traffic exceeds 1234 MiB."
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "cfd8fdb7-c9a7-441c-b570-842840a3b3e5",
+    "targetOperatorId": "OP0088639970",
+    "name": "test runonce",
+    "ruleConfig": {
+      "type": "SimMonthlyTotalTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_MONTH",
+        "limitTotalTrafficMegaByte": "100"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "SendMailAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "to": "asd@ad.ad",
+          "title": "ad",
+          "message": "asd"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "d6d475b0-fa02-46bf-a422-98024a4219cc",
+    "targetOperatorId": "OP0088639970",
+    "name": "test re1",
+    "ruleConfig": {
+      "type": "SubscriberDailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "AFTER_ONE_DAY",
+        "inactiveTimeoutOffsetMinutes": "11",
+        "limitTotalTrafficMegaByte": "123"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ActivationAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      }
+    ]
+  },
+  {
+    "handlerId": "dbb2c104-8e83-48ef-9c86-24f94b265665",
+    "targetGroupId": "dda258c8-f429-4934-b418-126e730cd56b",
+    "name": "Prefixed event handler",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_DAY",
+        "limitTotalTrafficMegaByte": "33"
+      }
+    },
+    "status": "inactive",
+    "actionConfigList": [
+      {
+        "type": "SendMailToOperatorAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "title": "Traffic notification",
+          "message": "Target SIM: ${imsi} \n\nDaily total traffic of the SIM exceeds 33 MiB."
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "def6e997-adac-42fd-9129-995716afb15d",
+    "targetGroupId": "test",
+    "name": "test-event2 activation",
+    "description": "activatoin action",
+    "ruleConfig": {
+      "type": "SubscriberSpeedClassAttributeRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_MONTH",
+        "targetSpeedClass": "s1.standard"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ActivationAction",
+        "properties": { "executionDateTimeConst": "BEGINNING_OF_NEXT_MONTH" }
+      }
+    ]
+  },
+  {
+    "handlerId": "e05859ab-0686-4ccc-a4c5-a7f81e610ace",
+    "targetGroupId": "test",
+    "name": "test-event2 webreq",
+    "description": "web request action",
+    "ruleConfig": {
+      "type": "CumulativeTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "88888"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ExecuteWebRequestAction",
+        "properties": {
+          "headers": "{\"test1t\":\"testvalue1\",\"test2\":\"teset2ss\"}",
+          "executionDateTimeConst": "IMMEDIATELY",
+          "httpMethod": "POST",
+          "body": "sfksffdsjkj",
+          "contentType": "json",
+          "url": "http://dss.dfd.sdf.com"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "e5caa252-97a5-4a59-8f44-7aba62206cc6",
+    "targetGroupId": "test",
+    "name": "event3",
+    "description": "aadad",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_DAY",
+        "limitTotalTrafficMegaByte": "333"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "SendMailAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "to": "dsf@dfs.com",
+          "title": "dsfsdf",
+          "message": "asdkfnsdf"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "e619a4fc-eac0-4e25-a08e-e5dab7c5ecae",
+    "targetImsi": "440103217006834",
+    "name": "change speed class rule",
+    "ruleConfig": {
+      "type": "SubscriberSpeedClassAttributeRule",
+      "properties": { "inactiveTimeoutDateConst": "NEVER" }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ImeiLockAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      }
+    ]
+  },
+  {
+    "handlerId": "e70acef1-d235-4707-9d79-7bff26c4d004",
+    "targetGroupId": "test",
+    "name": "test-event invok del",
+    "description": "invoke kamdfsdf",
+    "ruleConfig": {
+      "type": "DailyTrafficRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "limitTotalTrafficMegaByte": "213"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "InvokeAWSLambdaAction",
+        "properties": {
+          "secretAccessKey": "slfsdfsf",
+          "endpoint": "https://lsodfos.sdsd.s",
+          "functionName": "sdfsdflsf",
+          "accessKey": "SOEM ACCESS KEY",
+          "executionDateTimeConst": "NEVER",
+          "parameter3": "doskfsdf",
+          "parameter2": "parrakeraeae 2",
+          "parameter1": "sdadsads"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "ec3fd693-40de-4cad-ad8b-72d6f6b66d00",
+    "targetGroupId": "test",
+    "name": "test-even2 multi action",
+    "description": "multiple actions",
+    "ruleConfig": {
+      "type": "SubscriberStatusAttributeRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "BEGINNING_OF_NEXT_DAY",
+        "targetStatus": "suspended"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "SendMailAction",
+        "properties": {
+          "executionDateTimeConst": "IMMEDIATELY",
+          "to": "something@jjj.com",
+          "title": "hhahaaa",
+          "message": "jgjgfydkvcfkdgvchdjtdfkjbfdyuf"
+        }
+      },
+      {
+        "type": "ExecuteWebRequestAction",
+        "properties": {
+          "headers": "{\"test1\":\"fgvjk\",\"test2\":\"esdfsf\",\"test3\":\"esdfsdfd\"}",
+          "executionDateTimeConst": "NEVER",
+          "httpMethod": "POST",
+          "body": "gkuyfuloivcfd",
+          "contentType": "json",
+          "url": "https://test.com"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "f5f14191-2bf8-41c4-947d-901e5b567b46",
+    "targetOperatorId": "OP0088639970",
+    "name": "test subscriber imei mismatch",
+    "ruleConfig": {
+      "type": "SubscriberImeiMismatchedRule",
+      "properties": { "inactiveTimeoutDateConst": "IMMEDIATELY" }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ChangeSpeedClassAction",
+        "properties": {
+          "speedClass": "s1.minimum",
+          "executionDateTimeConst": "IMMEDIATELY"
+        }
+      }
+    ]
+  },
+  {
+    "handlerId": "f737edef-cb7f-46e5-9f1d-d74fa12d7ca3",
+    "targetSimId": "8981100005810717620",
+    "name": "testsim",
+    "ruleConfig": {
+      "type": "SimStatusAttributeRule",
+      "properties": {
+        "inactiveTimeoutDateConst": "IMMEDIATELY",
+        "targetStatus": "ready"
+      }
+    },
+    "status": "active",
+    "actionConfigList": [
+      {
+        "type": "ActivationAction",
+        "properties": { "executionDateTimeConst": "IMMEDIATELY" }
+      }
+    ]
+  }
+]

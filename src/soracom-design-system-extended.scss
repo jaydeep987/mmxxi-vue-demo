@@ -1,0 +1,197 @@
+$zindex-topmost: 1100;
+$zindex-under-modal: 900;
+$uc-color-black: #000000;
+$uc-color-background: var(--color-background-shade);
+$enable-dark-mode: false;
+$heading-sizing: user-console;
+
+:root {
+  --color-background-shade: #f7fafd;
+  --color-background-dark: #eaf2f9;
+  --color-background-darker: #d4e1ed;
+  --color-background-darkest: #b8c9da;
+}
+
+[class*='ds-notice'] {
+  & > h5,
+  & > h4 {
+    margin-top: 0;
+  }
+
+  & > ul {
+    margin-bottom: 0;
+    padding-inline-start: 1em;
+  }
+}
+
+.ds-breadcrumb {
+  background-color: var(--color-celeste-lightest);
+}
+
+.ds-page-title {
+  align-items: flex-end;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.ds-tabs ul li label {
+  margin-bottom: 0;
+}
+
+#page-wrapper .ds-breadcrumb {
+  margin: -20px -20px 0 -20px;
+}
+
+body {
+  background-color: $uc-color-background;
+  color: var(--color-default);
+  padding-top: 10px;
+}
+
+.ds-datatable th,
+[class*='ds-datatable--'] th {
+  text-transform: none !important;
+}
+
+.ds-tabs > li > a {
+  // Angular need to remove 'href' attribute, a tag's cursor is not a pointer if a href attribute doesn't exist.
+  cursor: pointer;
+}
+
+.ds-details sc-inplace-editable-text {
+  .form-control-static {
+    padding: 10px 16px !important;
+  }
+
+  .input-group {
+    padding: 0 !important;
+  }
+
+  .edit-value {
+    padding: 9px 16px !important;
+    height: 40px;
+    border-radius: 0;
+    margin: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .btn {
+    padding: 9px 16px !important;
+    height: 40px;
+    border-radius: 0;
+    border: none;
+    margin: 0 !important;
+  }
+
+  .input-group-btn + .input-group-btn {
+    border-left: 1px dotted currentColor;
+  }
+}
+
+.ds-pagination {
+  .toggle-auto-refresh {
+    margin-bottom: 0;
+  }
+}
+
+.ds-modal {
+  z-index: 1000 !important;
+}
+
+// IE Patch
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  [class*="ds-rows"] {
+    display: block !important;
+  }
+  [class*="ds-field"] {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+  .ds-group {
+    display: block !important;
+    border: 1px solid #ccc;
+  }
+  [class*="ds-group__title"] {
+    border-bottom: 1px solid #ccc;
+  }
+  [class*="ds-group__title"] ~ * {
+    margin: 20px 0;
+  }
+  [class*="ds-select"] {
+    padding: 5px !important;
+    width: auto !important;
+  }
+  [class*="--notification-alert"]::after {
+    background-color: red;
+  }
+  [class*="--alert"] {
+    color: red;
+  }
+  [class*="ds-text--label"] {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+  [class*="ds-richtip"] {
+    display: none !important;
+    visibility: visible !important;
+    position: relative !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+  [class*="ds-richtip"] > [class*="ds-icon"] {
+    display: none !important;
+  }
+  [class*="ds-richtip__content"] {
+    display: inline !important;
+    visibility: visible !important;
+    position: unset !important;
+    padding: 20px !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    transform: unset !important;
+    color: var(--color-default);
+    border: 1px solid #333;
+    top: initial !important;
+    bottom: initial !important;
+    left: initial !important;
+    right: initial !important;
+  }
+  [class*="ds-richtip__content"] {
+    display: block !important;
+  }
+  [data-button-style="primary"] {
+    background-color: #34cdd7 !important;
+    color: #000000 !important;
+  }
+  [class*="ds-tag--warning"] {
+    background-color: #f58300 !important;
+    color: #ffffff !important;
+  }
+  [class*="ds-dialog__header-icon"] {
+    display: none !important;
+  }
+}
